@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Export generator="Cache" version="25" zv="Cache for Windows (x86-64) 2014.2 (Build 218U)" ts="2014-03-12 16:18:47">
+<Project name="crud-ef-cache-kit" LastModified="2014-03-12 16:17:45.776803">
+  <Items>
+    <ProjectItem name="dbo.Employee" type="CLS"></ProjectItem>
+    <ProjectItem name="dbo.Project" type="CLS"></ProjectItem>
+  </Items>
+</Project>
+
+
+<Class name="dbo.Employee">
+<ClassType>persistent</ClassType>
+<DdlAllowed>1</DdlAllowed>
+<Owner>UnknownUser</Owner>
+<ProcedureBlock>1</ProcedureBlock>
+<SqlRowIdPrivate>1</SqlRowIdPrivate>
+<Super>%Persistent</Super>
+<TimeChanged>63258,50103.299901</TimeChanged>
+<TimeCreated>63258,39127.317348</TimeCreated>
+
+<Property name="ID">
+<Type>%Integer</Type>
+<Required>1</Required>
+<Parameter name="MINVAL" value="0"/>
+</Property>
+
+<Index name="IDIndex">
+<Properties>ID</Properties>
+<Unique>1</Unique>
+</Index>
+
+<Property name="FullName">
+<Type>%String</Type>
+<Parameter name="MAXLEN" value="50"/>
+</Property>
+
+<Property name="Projects">
+<Type>dbo.Project</Type>
+<Cardinality>many</Cardinality>
+<Inverse>Employee</Inverse>
+<Relationship>1</Relationship>
+</Property>
+
+<Storage name="Default">
+<Type>%Library.CacheStorage</Type>
+<DataLocation>^dbo.EmployeeD</DataLocation>
+<DefaultData>EmployeeDefaultData</DefaultData>
+<IdLocation>^dbo.EmployeeD</IdLocation>
+<IndexLocation>^dbo.EmployeeI</IndexLocation>
+<StreamLocation>^dbo.EmployeeS</StreamLocation>
+<Data name="EmployeeDefaultData">
+<Value name="1">
+<Value>%%CLASSNAME</Value>
+</Value>
+<Value name="2">
+<Value>ID</Value>
+</Value>
+<Value name="3">
+<Value>FullName</Value>
+</Value>
+</Data>
+</Storage>
+</Class>
+
+
+<Class name="dbo.Employee">
+<ClassType>persistent</ClassType>
+<DdlAllowed>1</DdlAllowed>
+<Owner>UnknownUser</Owner>
+<ProcedureBlock>1</ProcedureBlock>
+<SqlRowIdPrivate>1</SqlRowIdPrivate>
+<Super>%Persistent</Super>
+<TimeChanged>63258,50103.299901</TimeChanged>
+<TimeCreated>63258,39127.317348</TimeCreated>
+
+<Property name="ID">
+<Type>%Integer</Type>
+<Required>1</Required>
+<Parameter name="MINVAL" value="0"/>
+</Property>
+
+<Index name="IDIndex">
+<Properties>ID</Properties>
+<Unique>1</Unique>
+</Index>
+
+<Property name="FullName">
+<Type>%String</Type>
+<Parameter name="MAXLEN" value="50"/>
+</Property>
+
+<Property name="Projects">
+<Type>dbo.Project</Type>
+<Cardinality>many</Cardinality>
+<Inverse>Employee</Inverse>
+<Relationship>1</Relationship>
+</Property>
+
+<Storage name="Default">
+<Type>%Library.CacheStorage</Type>
+<DataLocation>^dbo.EmployeeD</DataLocation>
+<DefaultData>EmployeeDefaultData</DefaultData>
+<IdLocation>^dbo.EmployeeD</IdLocation>
+<IndexLocation>^dbo.EmployeeI</IndexLocation>
+<StreamLocation>^dbo.EmployeeS</StreamLocation>
+<Data name="EmployeeDefaultData">
+<Value name="1">
+<Value>%%CLASSNAME</Value>
+</Value>
+<Value name="2">
+<Value>ID</Value>
+</Value>
+<Value name="3">
+<Value>FullName</Value>
+</Value>
+</Data>
+</Storage>
+</Class>
+
+
+<Class name="dbo.Project">
+<ClassType>persistent</ClassType>
+<DdlAllowed>1</DdlAllowed>
+<Owner>UnknownUser</Owner>
+<ProcedureBlock>1</ProcedureBlock>
+<SqlRowIdPrivate>1</SqlRowIdPrivate>
+<Super>%Persistent</Super>
+<TimeChanged>63258,39912.322797</TimeChanged>
+<TimeCreated>63258,39596.684463</TimeCreated>
+
+<Property name="Code">
+<Type>%String</Type>
+<Required>1</Required>
+</Property>
+
+<Index name="CodeIndex">
+<Properties>Code</Properties>
+<Unique>1</Unique>
+</Index>
+
+<Property name="Description">
+<Type>%String</Type>
+<Parameter name="MAXLEN" value="100"/>
+</Property>
+
+<Property name="Employee">
+<Type>dbo.Employee</Type>
+<Cardinality>one</Cardinality>
+<Inverse>Projects</Inverse>
+<Relationship>1</Relationship>
+</Property>
+
+<Index name="EmployeeIndex">
+<Properties>Employee</Properties>
+</Index>
+
+<Storage name="Default">
+<Type>%Library.CacheStorage</Type>
+<DataLocation>^dbo.ProjectD</DataLocation>
+<DefaultData>ProjectDefaultData</DefaultData>
+<IdLocation>^dbo.ProjectD</IdLocation>
+<IndexLocation>^dbo.ProjectI</IndexLocation>
+<StreamLocation>^dbo.ProjectS</StreamLocation>
+<Data name="ProjectDefaultData">
+<Structure>listnode</Structure>
+<Subscript/>
+<Value name="1">
+<Value>%%CLASSNAME</Value>
+</Value>
+<Value name="2">
+<Value>Code</Value>
+</Value>
+<Value name="3">
+<Value>Description</Value>
+</Value>
+<Value name="4">
+<Value>Employee</Value>
+</Value>
+</Data>
+</Storage>
+</Class>
+</Export>
